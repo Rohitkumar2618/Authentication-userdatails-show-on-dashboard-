@@ -1,12 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
-
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -85,13 +84,12 @@ const Signup = () => {
           <span className="text-gray-600 text-sm">
             Already have an account?
           </span>
-          <a
-            href="/"
-            className="text-indigo-600 hover:text-indigo-800 transition duration-150 ease-in-out"
+          <Link
+            to="/"
+            className="text-indigo-600 hover:text-indigo-800 transition duration-150 ease-in-out ml-3"
           >
-            {" "}
             Login here
-          </a>
+          </Link>
         </div>
       </form>
     </div>
